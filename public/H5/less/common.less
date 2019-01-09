@@ -1,0 +1,107 @@
+body{
+  background-color: #fff;
+}
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.letao-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.letao-container .letao-topBar {
+  width: 100%;
+  height: 45px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #006699;
+  color: #FFFFFF;
+    //topBar 模块样式
+    a {
+      display: block;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      right: 0;
+        span {
+          color: #FFFFFF;
+        }
+    }
+    h3 {
+      margin: 0;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: normal;
+    }
+}
+//底部tabs样式
+.letao-container .letao-tabs {
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #006699;
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      float: left;
+      width: 25%;
+      height: 55px;
+      padding-top: 10px;
+      text-align: center;
+      &.now{
+        p,span{color: orange; }
+      }
+      a{
+        p{
+          margin: 0;
+          padding: 0;
+          color: #FFFFFF;
+          font-size: 12px;
+        }
+        span{
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+//中心滑动区域基本样式
+.letao-container .letao-content {
+  padding: 45px 0 55px 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.letao-container .letao-content .letao-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/*加载中效果*/
+.loading{
+  min-height: 250px;
+  width: 100%;
+  text-align: center;
+  line-height: 250px;
+}
+.loading .mui-icon{
+  color: #069;
+  animation: rotateLoading 1s infinite;
+}

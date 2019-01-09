@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <!--是否让苹果系统启动桌面快捷方法-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--ios顶部通知栏颜色-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--遇到数字不让他装成电话号码的格式-->
+    <meta content="email=no" name="format-detection">
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="assets/mui/css/mui.css">
+    <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/less" href="less/main.less">
+    <script src="assets/less/less.min.js"></script>
+    <title>乐淘分类</title>
+</head>
+<body>
+<div class="letao-container">
+    <header class="letao-topBar">
+        <a class="btn_left" href="javascript:history.back();"><span class="mui-icon mui-icon-arrowleft"></span></a>
+        <h3>乐淘分类</h3>
+        <a href="search.html" class="icon-search"><span class="fa fa-search"></span></a>
+    </header>
+    <div class="letao-content">
+        <div class="letao-wrapper">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="letao-fl">
+                        <ul>
+                        </ul>
+                    </div>
+                    <div class="letao-fr">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="letao-tabs">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-home"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li class="now">
+                <a href="index.html">
+                    <span class="fa fa-bars"></span>
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-user"></span>
+                    <p>会员中心</p>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
+
+<script type="text/template" id="firstCategory">
+    <% for(var i = 0 ; i < rows.length ; i ++){ %>
+    <li data-id="<%=rows[i].id%>" class="<%=i==0?'now':'' %>"><a href="javascript:;"><%=rows[i].categoryName%></a></li>
+    <% } %>
+</script>
+<script id="secondCategory" type="text/art-template">
+    <% if(rows.length == 0) {%>
+    <p style="padding: 10px">暂时没有分类数据</p>
+    <%} else { %>
+    <% for(let i = 0 ; i < rows.length ; i++) { %>
+    <li><a href="javascript:void (0)"><img src="<%=rows[i].brandLogo%>" alt="">
+        <p><%=rows[i].brandName%></p></a></li>
+    <%}%>
+    <% } %>
+</script>
+<script src="assets/mui/js/mui.min.js"></script>
+<script src="assets/zepto/zepto.min.js"></script>
+<script src="assets/artTemplate/template-native.js"></script>
+<script src="js/category.js"></script>
+</body>
+</html>

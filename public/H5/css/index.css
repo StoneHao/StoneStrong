@@ -1,0 +1,34 @@
+.letao-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.letao-container .letao-topBar{
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #006699;
+}
+.letao-container .letao-tabs{
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #006699;
+}
+.letao-container .letao-content{
+    padding: 45px 0 55px 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.letao-container .letao-content .letao-wrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}

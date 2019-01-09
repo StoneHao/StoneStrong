@@ -1,0 +1,53 @@
+//nav 模块
+.letao-nav {
+  width: 100%;
+  padding: 10px;
+  a {
+    float: left;
+    width: 33.3333%;
+    display: block;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+//产品模块
+.letao-product {
+  width: 100%;
+  padding: 0 10px;
+  .item:nth-of-type(2n) {
+    margin-left: 4%;
+  }
+  .item {
+    width: 48%;
+    float: left;
+    text-align: center;
+    box-shadow: 0 0 5px #ccc;
+    margin-top: 10px;
+    padding: 10px 5px;
+    .mui-ellipsis-2 {
+      height: 40px;
+      font-size: 14px;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+    p {
+      width: 100%;
+      font-size: 12px;
+    }
+    .newPrice{
+      color: red;
+    }
+    .oldPrice{
+      text-decoration: line-through;
+      color: #888888;
+    }
+    button {
+      font-size: 12px;
+    }
+  }
+}

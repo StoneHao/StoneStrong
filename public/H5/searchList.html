@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <!--是否让苹果系统启动桌面快捷方法-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--ios顶部通知栏颜色-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--遇到数字不让他装成电话号码的格式-->
+    <meta content="email=no" name="format-detection">
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="assets/mui/css/mui.css">
+    <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/less" href="less/main.less">
+    <script src="assets/less/less.min.js"></script>
+    <title>商品列表</title>
+</head>
+<body>
+<!--首页-->
+<div class="letao-container">
+    <header class="letao-topBar">
+        <a class="btn_left" href="javascript:history.back();"><span class="mui-icon mui-icon-arrowleft"></span></a>
+        <h3>商品列表</h3>
+    </header>
+    <div class="letao-content">
+        <div class="letao-wrapper">
+            <div id="refreshContainer" class="mui-scroll-wrapper mui-content ">
+                <div class="mui-scroll">
+                    <div class="letao-search">
+                        <form action="javascript:;">
+                            <input class="search-input" type="search" placeholder="请输入搜索关键字">
+                            <a class="search-btn" href="javascript:;">搜索</a>
+                        </form>
+                    </div>
+                    <div class="letao-order">
+                        <a href="javascript:void (0)" data-type="time">上架时间<span class="fa fa-angle-down"></span></a>
+                        <a href="javascript:void (0)" data-type="price">价格<span class="fa fa-angle-down"></span></a>
+                        <a href="javascript:void (0)" data-type="num">库存<span class="fa fa-angle-down"></span></a>
+                        <a href="javascript:void (0)" data-type="sale">折扣<span class="fa fa-angle-down"></span></a>
+                    </div>
+                    <div class="letao-product">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="letao-tabs">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-home"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="category.html">
+                    <span class="fa fa-bars"></span>
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-user"></span>
+                    <p>会员中心</p>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
+<script type="text/template" id="product">
+        <% for(var i = 0 ; i < $data.data.length ; i++) {%>
+        <% var item = $data.data[i]%>
+            <a href="product.html?productId=<%=item.id%>" class="item">
+                <% if(item.pic && item.pic[0]){ %>
+                <img src="<%=item.pic[0].picAddr%>">
+                <% } else{ %>
+                <img src="images/none.png">
+                <% } %>
+                <span class="mui-ellipsis-2 mui-text-left"><%=item.proName%></span>
+                <p>
+                    <span class="newPrice">&yen;<%=item.price%></span>
+                    <span class="oldPrice">&yen;<%=item.oldPrice%></span>
+                </p>
+                <button class="mui-btn-blue">立即购买</button>
+            </a>
+        <% } %>
+</script>
+<script src="assets/mui/js/mui.min.js"></script>
+<script src="assets/zepto/zepto.min.js"></script>
+<script src="assets/artTemplate/template-native.js"></script>
+<script src="js/common.js"></script>
+<script src="js/searchList.js"></script>
+</body>
+</html>
